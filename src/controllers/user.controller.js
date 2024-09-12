@@ -270,3 +270,22 @@ const getUserChannelProfile = asyncHandler(async (req, res) => {
                 localField: "_id",
                 foreignField: "subscriber",
                 as: "subscribedTo"
+        }
+        }
+    ]);
+
+    return res.status(200).json(new ApiResponse(200, channel, "User channel profile fetched successfully"));
+});
+
+export {
+    registerUser,
+    loginUser,
+    logoutUser,
+    refreshAccessToken,
+    changeCurrentPassword,
+    getCurrentUser,
+    updateAccountDetails,
+    updateUserAvatar,
+    updateUserCoverImage,
+    getUserChannelProfile
+};
