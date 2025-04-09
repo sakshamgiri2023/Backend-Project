@@ -1,27 +1,17 @@
-import { Upload } from "lucide-react";
-import mongoose, { now, Schema, schema } from "mongoose";
-import { useDeprecatedAnimatedState } from "motion/react";
+import mongoose, { Schema } from "mongoose";
 
 const subscriptionSchema = new Schema({
     subscriber: {
         type: Schema.Types.ObjectId,
         ref: "User"
     },
-    channel : {
+    channel: {
         type: Schema.Types.ObjectId,
         ref: "User"
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now
-    }
 },
-{
- timestamps: true
-})
+    {
+        timestamps: true
+    })
 
 export const Subscription = mongoose.model("Subscription", subscriptionSchema); 

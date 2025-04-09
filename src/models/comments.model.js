@@ -1,20 +1,11 @@
 import mongoose, { Schema } from "mongoose";
-import { data } from "motion/react-client";
 
 const commentSchema = new Schema({
     content: {
         type: String,
         required: true
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now
-    },
-    view: {
+    video: {
         type: Schema.Types.ObjectId,
         ref: "Video"
     },

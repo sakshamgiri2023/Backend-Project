@@ -3,11 +3,11 @@ import { title } from "motion/react-client";
 
 const videoSchema = new Schema({
     videoFile:{
-        type: String,  //cloudinary
+        type: String,  //cloudinary url
         required: true
     },
     thumbnail:{
-        type: String,
+        type: String,// cloudinary url
         required: true
     },
     title:{
@@ -30,17 +30,9 @@ const videoSchema = new Schema({
         type: Boolean,
         default: true
     },
-    ower:{
+    owner:{
         type: Schema.Types.ObjectId,
         ref: "User"
-    },
-    createdAt:{
-        type: Date,
-        default: Date.now
-    },
-    updatedAt:{
-        type: Date,
-        default: Date.now
     }
 },
 {

@@ -1,22 +1,13 @@
 import mongoose, {Schema} from "mongoose";
-import { video } from "motion/react-client";
 
 const likesSchema = new Schema({
     comment: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
         ref: " Comments"
-    },
-    createAt: {
-        type: Date,
-        default: Date.now
     },
     video:{
         type: Schema.Types.ObjectId,
         ref: "Video"
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now
     },
     likedBy: {
         type: Schema.Types.ObjectId,
